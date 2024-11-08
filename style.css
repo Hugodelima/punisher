@@ -9,13 +9,13 @@
   --line-colour: hsl(215, 32%, 27%);
 }
 
+/* Global Styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Project Styles */
 body {
   background-color: var(--bg-main);
   font-family: "Outfit", sans-serif;
@@ -24,22 +24,69 @@ body {
   line-height: 1.6;
 }
 
-.container{
-  display:flex;
+/* Header Styles */
+.header {
+  background-color: var(--bg-card);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid var(--line-colour);
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 50px;
+  height: auto;
+  margin-right: 1rem;
+}
+
+.site-title {
+  color: var(--colour-white);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.nav-menu ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-menu a {
+  color: var(--colour-white);
+  text-decoration: none;
+  font-weight: 400;
+}
+
+.nav-menu a:hover {
+  color: var(--colour-cyan);
+}
+
+/* Main Container */
+.container {
+  display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  gap: 1rem;
 }
-/* Card */
+
+/* Card Styles */
 .main-card {
   background-color: var(--bg-card);
-  width: min(87.5%, 22rem);
+  width: 100%;
+  max-width: 22rem;
   margin: 4rem auto;
   border-radius: 15px;
   padding: 1.5rem 1.6rem 2rem;
   box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.5);
 }
 
-/* Main Image */
+/* Image Container */
 .image-container {
   position: relative;
   margin: 0 auto;
@@ -86,7 +133,7 @@ body {
   display: block;
 }
 
-/* Main Content */
+/* Text and Info */
 .title {
   color: var(--colour-white);
   margin: 1.4rem 0 0.75rem;
@@ -121,37 +168,7 @@ body {
   margin-right: 0.5rem;
 }
 
-/* Creator Info */
-.creator-info {
-  display: flex;
-  border-top: 1px solid var(--line-colour);
-  padding-top: 1rem;
-  align-items: center;
-}
-
-.avatar {
-  border: 1px solid var(--colour-white);
-  border-radius: 50%;
-  width: 2rem;
-  height: auto;
-  margin-right: 1rem;
-}
-
-.creator-text {
-  font-weight: 300;
-}
-
-.creator-name {
-  color: var(--colour-white);
-}
-
-.title:hover,
-.creator-name:hover {
-  color: var(--colour-cyan);
-  cursor: pointer;
-}
-
-/* Footer Section */
+/* Footer */
 .attribution {
   font-size: 11px;
   text-align: center;
@@ -166,9 +183,29 @@ body {
   color: var(--colour-cyan);
 }
 
-/* Media Queries */
-@media screen and (max-width: 300px) {
-  .eth-info {
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .header {
     flex-direction: column;
+    text-align: center;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  .nav-menu ul {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .title {
+    font-size: 1.2rem;
+  }
+
+  .description {
+    font-size: 1rem;
   }
 }
